@@ -3,19 +3,22 @@
 
 
 makeCacheMatrix <- function(x = matrix()) {
+##initialize
 m <- NULL
   set <- function(y) {
     m <<- NULL
     }
   get <- function() x
+  ## get the matrix
   inverse <- function(solve) m <<- solve
+  ## calculates the inverse and caches 
   getinverse <- function() m
 
 }
 
 
 ## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
-## If the inverse has already been calculated
+## Checks if the inverse has already been calculated
 
 cacheSolve <- function(x, ...) {
       m <- x$getinverse()
